@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Vistas.MainReporte"
+    android:layout_marginTop="10dp"
+    >
+
+    <!-- Cambiamos a un GridLayout con 2 columnas -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:id="@+id/linearLayout"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            >
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estado Del Reporte: "
+                android:textSize="15sp"
+                android:textStyle="bold"
+            />
+            <TextView
+                android:id="@+id/viewestado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clave del Reporte:  "
+                android:orientation="vertical"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/viewclave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha de Modificacion: "
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/viewFechamodif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="#CCCCCC"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+           android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:layout_marginTop="0dp"
+        android:rowCount="8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout">
+
+
+        <!-- Botones -->
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="I. Delegacion"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="IX. Evaluacion II"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <!-- Repite el patrón para los otros botones -->
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="II. Servicio"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <!-- Repite el patrón para los otros botones -->
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="X.Tratamiento"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="III.Control"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <!-- Repite el patrón para los otros botones -->
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="XI.Traslado"
+
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="IV.Paciente"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <!-- Repite el patrón para los otros botones -->
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="XII.Observaciones"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="V.Causa Tx."
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <!-- Repite el patrón para los otros botones -->
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:layout_marginTop="6dp"
+            android:text="XIII.Ministerio Publico"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="VI.Causa Clinica"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <!-- Repite el patrón para los otros botones -->
+
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="XIV.Datos Legales"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="VII.Parto"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <!-- Repite el patrón para los otros botones -->
+
+        <Button
+            android:id="@+id/button15"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="XV.Hospital Receptor"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="VIII.Evaluacion I."
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <!-- Repite el patrón para los otros botones -->
+
+        <Button
+            android:id="@+id/button16"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:text="Consumos"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </GridLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#CCCCCC"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+
+        tools:ignore="MissingConstraints" />
+    <!-- Puedes agregar otros elementos o vistas aquí, fuera del GridLayout, si es necesario -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="770dp"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabRegresar"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:backgroundTint="#FB20B5B2"
+            android:src="@drawable/baseline_arrow_back_24" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/FabCancelado"
+            android:layout_marginLeft="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:backgroundTint="#FB20B5B2"
+            android:src="@drawable/baseline_cancel_24" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:clickable="true"
+            android:backgroundTint="#FB20B5B2"
+            android:src="@drawable/baseline_save_24" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

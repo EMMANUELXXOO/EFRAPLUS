@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_app"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FRAPPLUS"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".Vistas.Evaluacion2Reporte5"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.OpcionesAdicionalesCRUM"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.OpcionesAdicionalesComentariosGenerales"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.OpcionesAdicionalesresumenSignosVitales"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.OpcionesAdicionalesSignosVitales"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.OpcionesAdicionalesReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.ConsumosResumenMedicamentos"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.ConsumosResumenMateriales"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.ConsumosAgregarMedicamentos"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.ConsumosAgregarMaterialMedico"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.DatosLegalesReporte3"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.DatosLegalesReporte2"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.TrasladoReporte3"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.TrasladoReporte2"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.TratamientoReporte6"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.TratamientoReporte5"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.TratamientoReporte4"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.TratamientoReporte3"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.TratamientoReporte2"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.EvaluacionIReporte5"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.Evaluacion2Reporte4"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.Evaluacion2Reporte3"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.Evaluacion2Reporte2"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.Evaluacion2Reporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.EvaluacionIReporte4"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.EvaluacionIReporte3"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.EvaluacionIReporte2"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.PartoReporte2"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.CausaTxReporte3"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.CausaTxReporte2"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.ServicioReporte2"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.ConsumosReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vistas.HospitalReceptorReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.DatosLegalesReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.MinisterioPublicoReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.ObservacionesReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.TrasladoReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.TratamientoReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.EvaluacionIIReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.EvaluacionIReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.PartoReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.CausaClinicaReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.CausaTxReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.PacienteReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.ControlReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.ServicioReporte"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.CanceladoActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.DelegacionReporte"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Vistas.MainReporte"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Vistas.VerInformeFrap"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Vistas.Ayuda"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Vistas.Configuracion"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityInicio"
+            android:exported="false" />
+        <activity
+            android:name=".editaractivity"
+            android:exported="false" />
+        <activity
+            android:name=".VerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Consumos"
+            android:exported="false" />
+        <activity
+            android:name=".XVHospitalReceptor"
+            android:exported="false" />
+        <activity
+            android:name=".XIVDatosLegales"
+            android:exported="false" />
+        <activity
+            android:name=".XIIIMinisterioPublico"
+            android:exported="false" />
+        <activity
+            android:name=".XIIObservaciones"
+            android:exported="false" />
+        <activity
+            android:name=".XITraslado"
+            android:exported="false" />
+        <activity
+            android:name=".XTratamiento"
+            android:exported="false" />
+        <activity
+            android:name=".IXEvaluacion"
+            android:exported="false" />
+        <activity
+            android:name=".VIIIEvaluacionI"
+            android:exported="false" />
+        <activity
+            android:name=".VIIParto"
+            android:exported="false" />
+        <activity
+            android:name=".VICausaClinica"
+            android:exported="false" />
+        <activity
+            android:name=".VCausaTx"
+            android:exported="false" />
+        <activity
+            android:name=".IVPACIENTE"
+            android:exported="false" />
+        <activity
+            android:name=".Control"
+            android:exported="false" />
+        <activity
+            android:name=".Servicio"
+            android:exported="false" />
+        <activity
+            android:name=".DatosDelegacion"
+            android:exported="false" />
+        <activity
+            android:name=".VerServidores"
+            android:exported="false" />
+        <activity
+            android:name=".AgregarServidor"
+            android:exported="false" />
+        <activity
+            android:name=".VerImpresoras"
+            android:exported="false" />
+        <activity
+            android:name=".AgregarImpresoras"
+            android:exported="false" />
+        <activity
+            android:name=".IniciarTurnoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FRAPCanceladoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfiguracionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vistas.InicioFrap"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Vistas.activity_splash"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

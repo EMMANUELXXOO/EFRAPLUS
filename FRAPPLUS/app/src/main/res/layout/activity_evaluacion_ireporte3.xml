@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+
+            android:id="@+id/linearLayout"
+            tools:ignore="MissingConstraints">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+
+                android:background="#CCCCCC"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+
+                tools:ignore="MissingConstraints" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Estado Del Reporte: "
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/viewestado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Clave del Reporte:  "
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/viewclave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha de Modificacion: "
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/viewFechamodif"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_height="4dp"
+            android:background="#CCCCCC" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIII.Evaluacion I(Anexo II) "
+                android:textStyle="bold"
+                android:textSize="22sp"
+
+                />
+
+
+        </LinearLayout>
+        <!-- CheckBox Nivel de Conciencia-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            >
+
+
+
+            <!-- Segundo LinearLayout (al lado del primero) -->
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+
+                >
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hemitorax:"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+
+                            >
+
+                            <CheckBox
+
+                                android:id="@+id/checkbox_Derecho"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Derecho"
+                                android:layout_marginLeft="0dp"
+                                android:checked="false" />
+                            <CheckBox
+
+                                android:id="@+id/checkbox_Izquierdo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Izquierdo"
+                                android:layout_marginLeft="0dp"
+                                android:checked="false" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <!-- CheckBox Nivel de Sitio-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            >
+
+
+
+            <!-- Segundo LinearLayout (al lado del primero) -->
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+
+                >
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sitio:"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+
+                            >
+
+                            <CheckBox
+
+                                android:id="@+id/checkbox_Apical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Apical"
+                                android:layout_marginLeft="0dp"
+                                android:checked="false" />
+                            <CheckBox
+
+                                android:id="@+id/checkbox_Base"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Base"
+                                android:layout_marginLeft="0dp"
+                                android:checked="false" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <!-- CheckBox Presencia De Pulsos-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+
+            >
+
+
+
+            <!-- Segundo LinearLayout (al lado del primero) -->
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+
+                >
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Presencia De Pulsos:"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        >
+
+                        <GridLayout
+                            android:id="@+id/gridLayoutViaAerea"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:columnCount="2"
+                            android:rowCount="3">>
+
+                            <CheckBox
+
+                                android:id="@+id/checkbox_Carotideo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Carotideo"
+                                android:layout_marginLeft="0dp"
+                                android:checked="false" />
+
+                            <CheckBox
+
+                                android:id="@+id/checkbox_Radial"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Radial"
+                                android:layout_marginLeft="0dp"
+                                android:checked="false" />
+                            <CheckBox
+
+                                android:id="@+id/checkbox_ParoRespiratorio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Paro Respiratorio"
+                                android:layout_marginLeft="0dp"
+                                android:checked="false" />
+
+                            <!-- Agrega más botones de opción aquí si es necesario -->
+                        </GridLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <!-- CheckBox Calidad-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+
+            >
+
+
+
+            <!-- Segundo LinearLayout (al lado del primero) -->
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+
+                >
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calidad:"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        >
+
+                        <GridLayout
+                            android:id="@+id/gridLayoutCalidad"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:columnCount="2"
+                            android:rowCount="3">
+
+                            <CheckBox
+
+                                android:id="@+id/checkbox_Rapido"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rapido"
+                                android:layout_marginLeft="0dp"
+                                android:checked="false" />
+
+                            <CheckBox
+
+                                android:id="@+id/checkbox_Ritmico"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ritmico"
+                                android:layout_marginLeft="0dp"
+                                android:checked="false" />
+                            <CheckBox
+
+                                android:id="@+id/checkbox_Lento"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Lento"
+                                android:layout_marginLeft="0dp"
+                                android:checked="false" />
+                            <CheckBox
+
+                                android:id="@+id/checkbox_Arritmico"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Arritmico"
+                                android:layout_marginLeft="0dp"
+                                android:checked="false" />
+                            <!-- Agrega más botones de opción aquí si es necesario -->
+                        </GridLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!-- Group Reflejo de Deglucion-->
+
+        <!-- Botones-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabRegresar"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:backgroundTint="#FB20B5B2"
+                android:src="@drawable/baseline_arrow_back_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:layout_gravity="center"
+
+                android:layout_marginLeft="110dp"
+                android:clickable="true"
+                android:backgroundTint="#FB20B5B2"
+                android:src="@drawable/baseline_save_24" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

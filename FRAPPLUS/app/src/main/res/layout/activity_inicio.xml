@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityInicio">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        tools:ignore="ExtraText">
+
+        <Button
+            android:id="@+id/BtnInsertar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+
+            android:onClick="onRequestButtonClicked"
+            android:text="Realizar Solicitud"
+            android:translationX="0dp" />
+
+        <EditText
+            android:id="@+id/dataEditText"
+            android:layout_width="245dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+
+            android:hint="Ingrese los datos"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+
+
+
+
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="750dp"
+        android:layout_height="wrap_content"
+        android:rowCount="2"
+        android:columnCount="3">
+
+        <!-- Fila 1, Columna 1 -->
+        <Button
+            android:id="@+id/btnNuevo"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+
+            android:layout_marginLeft="10sp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:text="Nuevo" />
+
+        <!-- Fila 1, Columna 2 -->
+        <Button
+            android:id="@+id/btnCancelado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+
+            android:layout_column="1"
+            android:layout_marginLeft="10sp"
+            android:text="FRAP Cancelado" />
+
+        <!-- Fila 1, Columna 3 -->
+
+        <!-- Fila 2, Columna 1 -->
+        <Button
+            android:id="@+id/btnAbrir"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_marginLeft="4sp"
+            android:layout_column="2"
+            android:text="Abrir" />
+
+        <!-- Fila 2, Columna 2 -->
+        <Button
+            android:id="@+id/btnIniciarTurno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_marginLeft="10sp"
+            android:text="Iniciar Turno" />
+
+        <Button
+            android:id="@+id/btnConfiguracion"
+            android:layout_width="154dp"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_marginLeft="10sp"
+            android:text="Configuracion" />
+
+        <!-- Fila 2, Columna 3 -->
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_marginLeft="10sp"
+            android:layout_column="2"
+            android:text="Eliminar" />
+
+    </GridLayout>
+
+    <ListView
+        android:id="@+id/Lista"
+        android:layout_width="354dp"
+        android:layout_height="583dp"
+        android:translationX="30dp"
+        android:translationY="140dp"
+
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID Orden"
+        android:textSize="20sp"
+        android:translationX="30dp"
+        android:translationY="100dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado Orden"
+        android:textSize="20sp"
+        android:translationX="207dp"
+        android:translationY="100dp" />
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

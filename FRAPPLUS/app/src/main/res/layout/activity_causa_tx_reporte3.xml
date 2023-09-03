@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+
+            android:id="@+id/linearLayout"
+            tools:ignore="MissingConstraints">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+
+                android:background="#CCCCCC"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+
+                tools:ignore="MissingConstraints" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Estado Del Reporte: "
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/viewestado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Clave del Reporte:  "
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/viewclave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha de Modificacion: "
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/viewFechamodif"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_height="4dp"
+            android:background="#CCCCCC" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="V.Causa Traumatica(Anexo II) "
+                android:textStyle="bold"
+                android:textSize="22sp"
+
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+
+            tools:ignore="MissingConstraints">
+
+
+
+            <!-- Segundo LinearLayout (al lado del primero) -->
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                >
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    tools:ignore="MissingConstraints">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hundimiento"
+
+                            android:layout_marginRight="10dp"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/editTextHundimiento"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:hint="Ingresa Datos"
+                            style="@style/CustomSpinnerStyle"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cms"
+android:layout_marginLeft="10dp"
+                            android:layout_marginRight="0dp"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!-- Accidente Automovilistico-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            >
+
+
+            <!-- Segundo LinearLayout (al lado del primero) -->
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+
+                >
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Parabrisas:"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        >
+
+                        <GridLayout
+                            android:id="@+id/gridLayoutParabrisas"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:columnCount="2"
+                            android:rowCount="3">>
+
+                            <RadioButton
+                                android:id="@+id/radParabrisasIntegro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Integro"
+                                />
+
+                            <RadioButton
+                                android:id="@+id/radParabrisasRotoDoblado"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="Roto Doblado" />
+
+
+
+
+                            <!-- Agrega más botones de opción aquí si es necesario -->
+                        </GridLayout>
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Volante"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                >
+
+                                <GridLayout
+                                    android:id="@+id/gridLayoutVolante"
+                                    android:layout_marginTop="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:columnCount="2"
+                                    android:rowCount="3">>
+
+                                    <RadioButton
+                                        android:id="@+id/radVolanteIntegro"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Integro"
+                                        />
+
+                                    <RadioButton
+                                        android:id="@+id/radVolanteDoblado"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_row="0"
+                                        android:layout_column="1"
+                                        android:layout_marginLeft="20dp"
+                                        android:text="Doblado" />
+
+
+                                    <!-- Agrega más botones de opción aquí si es necesario -->
+                                </GridLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <!-- Sobre la colision-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            >
+
+
+
+            <!-- Segundo LinearLayout (al lado del primero) -->
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+
+                >
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bolsa De Aire:"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        >
+
+                        <GridLayout
+                            android:id="@+id/gridLayoutBolsadeAire"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:columnCount="2"
+                            android:rowCount="3">>
+
+                            <RadioButton
+                                android:id="@+id/radSiBolsa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Si"
+                                />
+
+                            <RadioButton
+                                android:id="@+id/radNoBolsa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="No" />
+
+
+
+
+                            <!-- Agrega más botones de opción aquí si es necesario -->
+                        </GridLayout>
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cinturon De Seguridad"
+                                android:textStyle="bold"
+                                android:textSize="18sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                >
+
+                                <GridLayout
+                                    android:id="@+id/gridLayoutCinturonDeSeguridad"
+                                    android:layout_marginTop="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:columnCount="2"
+                                    android:rowCount="3">>
+
+                                    <RadioButton
+                                        android:id="@+id/radCinturonColocado"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Colocado"
+                                        />
+
+                                    <RadioButton
+                                        android:id="@+id/radCinturonNoColocado"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:text="No Colocado" />
+
+
+
+                                    <!-- Agrega más botones de opción aquí si es necesario -->
+                                </GridLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <!-- Sobre la colision-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            >
+
+
+
+            <!-- Segundo LinearLayout (al lado del primero) -->
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+
+                >
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dentro Del Vehiculo:"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        >
+
+                        <GridLayout
+                            android:id="@+id/gridLayoutDentrodelVehiculo"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:columnCount="3"
+                            android:rowCount="3">>
+
+                            <RadioButton
+                                android:id="@+id/radDentroSiVehiculo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Si"
+                                />
+
+                            <RadioButton
+                                android:id="@+id/radDentroNoVehiculo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="No" />
+                            <RadioButton
+                                android:id="@+id/radDentroEyectadoVehiculo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="Eyectado" />
+
+
+
+
+
+                            <!-- Agrega más botones de opción aquí si es necesario -->
+                        </GridLayout>
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Atropellado"
+                                android:textStyle="bold"
+                                android:textSize="18sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                >
+
+                                <GridLayout
+                                    android:id="@+id/gridLayoutAtropellado"
+                                    android:layout_marginTop="0dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:columnCount="2"
+                                    android:rowCount="3">>
+
+                                    <RadioButton
+                                        android:id="@+id/radAtropelladoAutomotor"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Automotor"
+                                        />
+
+                                    <RadioButton
+                                        android:id="@+id/radAtropelladoMotocicleta"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:text="Motocicleta" />
+                                    <RadioButton
+                                        android:id="@+id/radAtropelladoBicicleta"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Bicicleta"
+                                        />
+
+                                    <RadioButton
+                                        android:id="@+id/radAtropelladoMaquinaria"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:text="Maquinaria" />
+
+
+
+                                    <!-- Agrega más botones de opción aquí si es necesario -->
+                                </GridLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabRegresar"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#FB20B5B2"
+                android:clickable="true"
+                android:src="@drawable/baseline_arrow_back_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:layout_gravity="center"
+
+                android:layout_marginLeft="110dp"
+                android:backgroundTint="#FB20B5B2"
+                android:clickable="true"
+                android:src="@drawable/baseline_save_24" />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

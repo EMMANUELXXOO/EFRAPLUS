@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomSpinnerStyle">
+        <!-- Cambia el color de fondo del spinner -->
+        <item name="android:background">#9777F8EC</item> <!-- Cambia a tu color  CD77F8EC,9777F8EC  preferido -->
+
+        <!-- Cambia el color del texto seleccionado -->
+        <item name="android:textColor">#000000</item> <!-- Cambia a tu color preferido -->
+
+        <!-- Cambia el color del indicador desplegable -->
+        <item name="android:popupBackground">#FFFFFF</item> <!-- Cambia 8DF6ED a tu color preferido -->
+    </style>
+</resources>
