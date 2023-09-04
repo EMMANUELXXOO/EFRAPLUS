@@ -277,7 +277,7 @@
                                 android:text="Intraosea" />
 
                             <RadioButton
-                                android:id="@+id/radOtra"
+                                android:id="@+id/radOtroSitioAPlicacion"
                                 android:layout_width="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:layout_height="wrap_content"
@@ -377,7 +377,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Glucosa 5%" />
                             <RadioButton
-                                android:id="@+id/radOtra"
+                                android:id="@+id/radOtraSolucion"
                                 android:layout_width="wrap_content"
 
                                 android:layout_height="wrap_content"

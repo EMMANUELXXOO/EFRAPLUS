@@ -73,7 +73,7 @@ public class TratamientoReporte extends AppCompatActivity {
                     checkbox_Combitubo.setChecked(false);
                     checkbox_MascarillaLaringe.setChecked(false);
                     checkbox_Cricotirodotomia.setChecked(false);
-                    ViaAerea = "CanulaOrofaringea";
+                    ViaAerea = "Canula Orofaringea";
                 }
             }
         });
@@ -88,7 +88,7 @@ public class TratamientoReporte extends AppCompatActivity {
                     checkbox_Combitubo.setChecked(false);
                     checkbox_MascarillaLaringe.setChecked(false);
                     checkbox_Cricotirodotomia.setChecked(false);
-                    ViaAerea = "IntubacionOrotraqueal";
+                    ViaAerea = "Intubacion Orotraqueal";
                 }
             }
         });
@@ -103,7 +103,7 @@ public class TratamientoReporte extends AppCompatActivity {
                     checkbox_Combitubo.setChecked(false);
                     checkbox_MascarillaLaringe.setChecked(false);
                     checkbox_Cricotirodotomia.setChecked(false);
-                    ViaAerea = "IntubacionNasotraqueal";
+                    ViaAerea = "Intubacion Nasotraqueal";
                 }
             }
         });
@@ -133,7 +133,7 @@ public class TratamientoReporte extends AppCompatActivity {
                     checkbox_IntubacionNasotraqueal.setChecked(false);
                     checkbox_Combitubo.setChecked(false);
                     checkbox_Cricotirodotomia.setChecked(false);
-                    ViaAerea = "MascarillaLaringea";
+                    ViaAerea = "Mascarilla Laringea";
                 }
             }
         });
@@ -163,7 +163,7 @@ public class TratamientoReporte extends AppCompatActivity {
                 if (checkbox_Manual.isChecked()) {
                     checkbox_CollarinRigido.setChecked(false);
                     checkbox_CollarinBlando.setChecked(false);
-                    ViaAerea= "Manual";
+                    ControlCervical= "Manual";
                 }
             }
         });
@@ -173,7 +173,7 @@ public class TratamientoReporte extends AppCompatActivity {
                 if (checkbox_CollarinRigido.isChecked()) {
                     checkbox_Manual.setChecked(false);
                     checkbox_CollarinBlando.setChecked(false);
-                    ViaAerea= "Collarin Rigido";
+                    ControlCervical= "Collarin Rigido";
                 }
             }
         });
@@ -183,7 +183,7 @@ public class TratamientoReporte extends AppCompatActivity {
                 if (checkbox_CollarinBlando.isChecked()) {
                     checkbox_Manual.setChecked(false);
                     checkbox_CollarinRigido.setChecked(false);
-                    ViaAerea= "Collarin Blando";
+                    ControlCervical= "Collarin Blando";
                 }
             }
         });
@@ -255,7 +255,7 @@ public class TratamientoReporte extends AppCompatActivity {
                 //valorSeleccionado
                 String claveGenerada = frapOrden.getClave();;
 //              Realizar validaciones
-                if (ViaAerea.isEmpty()||ControlCervical.isEmpty()) {
+                if (claveGenerada.isEmpty()) {
                     // Mostrar un mensaje de error o notificación al usuario
                     Toast.makeText(TratamientoReporte.this, "Por favor, complete todos los campos ", Toast.LENGTH_SHORT).show();
                 } else {

@@ -172,7 +172,7 @@
 
                             <RadioButton
 
-                                android:id="@+id/checkbox_CriticoInestable"
+                                android:id="@+id/radCriticoInestable"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Critico Inestable"
@@ -181,7 +181,7 @@
 
                             <RadioButton
 
-                                android:id="@+id/checkbox_CriticoEstable"
+                                android:id="@+id/radCriticoEstable"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Critico Estable"
@@ -190,7 +190,7 @@
 
                             <RadioButton
 
-                                android:id="@+id/checkbox_NocriticoInestable"
+                                android:id="@+id/radNocriticoInestable"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="No Critico Inestable"
@@ -199,7 +199,7 @@
 
                             <RadioButton
 
-                                android:id="@+id/checkbox_NocriticoEstable"
+                                android:id="@+id/radNocriticoEstable"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="No Critico Estable"
@@ -268,7 +268,7 @@
 
                             <RadioButton
 
-                                android:id="@+id/checkbox_Rojo"
+                                android:id="@+id/radRojo"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Rojo"
@@ -277,7 +277,7 @@
 
                             <RadioButton
 
-                                android:id="@+id/checkbox_Verde"
+                                android:id="@+id/radVerde"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Verde"
@@ -286,7 +286,7 @@
 
                             <RadioButton
 
-                                android:id="@+id/checkbox_Amarillo"
+                                android:id="@+id/radAmarillo"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Amarrillo"
@@ -295,7 +295,7 @@
 
                             <RadioButton
 
-                                android:id="@+id/checkbox_Negro"
+                                android:id="@+id/radNegro"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Negro"

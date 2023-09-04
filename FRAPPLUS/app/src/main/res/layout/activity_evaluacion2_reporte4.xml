@@ -177,14 +177,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/viewAlergias"
-                            style="@style/CustomSpinnerStyle"
-                            android:layout_marginTop="5dp"
+                        <EditText
+                            android:id="@+id/editTextAlergias"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp">
+                            android:layout_height="45dp"
+                            style="@style/CustomSpinnerStyle"
+                            android:inputType="text"
+                            android:hint="Ingresa Datos"
 
-                        </com.google.android.material.textfield.TextInputLayout>
+
+                            />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -229,14 +231,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/viewMedicamentosInge"
-                            style="@style/CustomSpinnerStyle"
-                            android:layout_marginTop="5dp"
+                        <EditText
+                            android:id="@+id/editTextMedicamentoqueingiere"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp">
+                            android:layout_height="45dp"
+                            style="@style/CustomSpinnerStyle"
+                            android:inputType="text"
+                            android:hint="Ingresa Datos"
 
-                        </com.google.android.material.textfield.TextInputLayout>
+
+                            />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -281,14 +285,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/viewEnfeyCiruPrevias"
-                            style="@style/CustomSpinnerStyle"
-                            android:layout_marginTop="5dp"
+                        <EditText
+                            android:id="@+id/editTextEnfermedadesyCirugias"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp">
+                            android:layout_height="45dp"
+                            style="@style/CustomSpinnerStyle"
+                            android:inputType="text"
+                            android:hint="Ingresa Datos"
 
-                        </com.google.android.material.textfield.TextInputLayout>
+
+                            />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -297,18 +303,18 @@
         <!-- Group Via Aerea-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="90dp"
             android:gravity="center"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             tools:ignore="MissingConstraints">
 
             <!-- Primer LinearLayout -->
             <LinearLayout
 
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
 
                 tools:ignore="MissingConstraints">
@@ -316,27 +322,34 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hora de Ultima Comida"
-                    android:textSize="18sp"
-
+                    android:text="Hora Ultima Comida"
+                    android:textSize="14sp"
                     />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
                     >
                     <ImageButton
-                        android:id="@+id/btnHrInicioContraccion"
+                        android:id="@+id/btnHrultimaComida"
                         android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_height="match_parent"
                         android:background="@color/colorPrimary"
                         android:src="@drawable/ic_clock"/>
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:id="@+id/viewHrInicioContraccion"
+                        android:layout_height="match_parent"
+                        android:id="@+id/viewHoraContraccion"
+                        android:gravity="center"
                         style="@style/CustomSpinnerStyle">
+
+                        <EditText
+                            android:id="@+id/editTextHoraUltimaCOmida"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -384,14 +397,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/viewDuracion"
-                            style="@style/CustomSpinnerStyle"
-                            android:layout_marginTop="5dp"
+                        <EditText
+                            android:id="@+id/editTextEventosPrevios"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp">
+                            android:layout_height="45dp"
+                            style="@style/CustomSpinnerStyle"
+                            android:inputType="text"
+                            android:hint="Ingresa Datos"
 
-                        </com.google.android.material.textfield.TextInputLayout>
+
+                            />
                     </LinearLayout>
                 </LinearLayout>
 
