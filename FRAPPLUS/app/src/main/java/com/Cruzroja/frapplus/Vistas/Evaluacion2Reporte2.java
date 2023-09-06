@@ -237,9 +237,9 @@ public class Evaluacion2Reporte2 extends AppCompatActivity {
                 String claveGenerada = frapOrden.getClave();;
 
 //              Realizar validaciones
-                if (Pupilasimagen.isEmpty()){
+                if (Pupilasimagen== null){
                     // Mostrar un mensaje de error o notificación al usuario
-                    Toast.makeText(Evaluacion2Reporte2.this, "Por favor, complete todos los campos ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Evaluacion2Reporte2.this, "Por favor, Selecciona una Imagen ", Toast.LENGTH_SHORT).show();
                 } else {
                     // Obtener el valor de viewDia
 

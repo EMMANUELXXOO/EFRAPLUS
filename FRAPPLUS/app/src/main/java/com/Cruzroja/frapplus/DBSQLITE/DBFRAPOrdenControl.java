@@ -1135,7 +1135,59 @@ public boolean editarDelegacionReporte(String ClaveFRAPOrden, String Estado, Str
         return correcto;
     }
     //Evaluacion II
+    public long insertaEvaluacion2IReporte(String ClaveFRAPOrden
+            , String LesionDiagrama) {
+        long ID = 0;
+        try {
 
+            //Lllamamos a dbhelper
+            DBHelper dbHelper = new DBHelper(context);
+            //Lllamamos a sqlite
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+            //Agregar la funcion para insertar registro
+            ContentValues values = new ContentValues();
+
+            values.put("ClaveFRAPOrden", ClaveFRAPOrden);
+            values.put("LesionDiagrama", LesionDiagrama);
+
+
+
+
+            ID = db.insert(TABLE_EvaluacionII, null, values);
+
+        } catch (Exception e) {
+            Toast.makeText(context, "Error de insercion", Toast.LENGTH_SHORT).show();
+            e.toString();
+        }
+        return ID;
+    }
+
+    //Editar
+    public boolean editarEvaluacion2Reporte(String ClaveFRAPOrden
+            , String LesionDiagrama) {
+
+        boolean correcto = false;
+
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        try {
+            //Modifica la tabla
+            db.execSQL("UPDATE " + TABLE_EvaluacionII +
+                    " SET LesionDiagrama = '" + LesionDiagrama + "'" +
+                    " WHERE ClaveFRAPOrden = '" + ClaveFRAPOrden + "'");
+
+
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+        return correcto;
+    }
     //Evaluacion II(Anexo HOja 2 I)
     public long insertaEvaluacion2IReporte2(String ClaveFRAPOrden
             , String PupilasDiagrama) {
