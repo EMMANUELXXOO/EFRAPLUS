@@ -56,7 +56,7 @@ public class ConsumosReporte extends AppCompatActivity {
         MaterialMedico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ConsumosReporte.this, ConsumosAgregarMaterialMedico.class);
+                Intent intent = new Intent(ConsumosReporte.this, AgregarMaterialMedico.class);
                 intent.putExtra("id", id);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
@@ -74,7 +74,7 @@ public class ConsumosReporte extends AppCompatActivity {
         AgregarMedicamentos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ConsumosReporte.this, ConsumosAgregarMedicamentos.class);
+                Intent intent = new Intent(ConsumosReporte.this, AgregarMedicamentos.class);
                 intent.putExtra("id", id);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_out);

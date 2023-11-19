@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
@@ -182,8 +183,6 @@ EditText editTextCallePrincipal,editTextCalle1,editTextCalle2,editTextColonia;
         });
 
 
-
-
         ///////////////////////////////////////////////////////////////////
         SpinerDelegacionM = findViewById(R.id.SpinerDelegacionM);
 
@@ -289,7 +288,26 @@ EditText editTextCallePrincipal,editTextCalle1,editTextCalle2,editTextColonia;
                         if (correcto) {
                             Intent intent = new Intent(ServicioReporte2.this, MainReporte.class);
                             intent.putExtra("id", id);
+                            ///////Para los botones bloqueados
+// Dentro de la actividad donde deseas bloquear el botón
+                            SharedPreferences preferences = getSharedPreferences("MisPreferencias", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            editor.putBoolean("botonBloqueado", false);
+                            editor.apply();
+
+                            //////
+                            SharedPreferences preferences1 = getSharedPreferences("MisPreferencias1", MODE_PRIVATE);
+                            SharedPreferences.Editor editor1 = preferences1.edit();
+                            editor1.putBoolean("botonBloqueado1", false);
+                            editor1.apply();
+
+                            SharedPreferences preferences2 = getSharedPreferences("MisPreferencias2", MODE_PRIVATE);
+                            SharedPreferences.Editor editor2 = preferences2.edit();
+                            editor2.putBoolean("botonBloqueado2", true);
+                            editor2.apply();
+
                             startActivity(intent);
+
                             overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                             finish();
                             // String mensaje = "Clave: " + claveGenerada +"Estado: " + selectedEstado + "\nDelegación: " + selectedDelegacion + "\nAsignación: " + selectedAsignacion;

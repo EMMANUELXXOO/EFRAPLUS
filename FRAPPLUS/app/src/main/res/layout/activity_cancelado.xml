@@ -110,7 +110,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Datos Paciente "
+                android:text="DELEGACION FRAP CANCELADO "
                 android:textStyle="bold"
                 android:textSize="22sp"
 
@@ -143,7 +143,7 @@
             android:layout_marginTop="20dp"
             >
             <Spinner
-                android:id="@+id/estadoSpinner"
+                android:id="@+id/estadoCSpinner"
                 android:layout_width="0dp"
                 style="@style/CustomSpinnerStyle"
                 android:layout_height="40dp"
@@ -160,7 +160,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal">
 
             <TextView
@@ -180,7 +180,7 @@
             android:layout_marginTop="20dp"
             >
             <Spinner
-                android:id="@+id/delegacionSpinner"
+                android:id="@+id/delegacionCSpinner"
                 android:layout_width="0dp"
                 style="@style/CustomSpinnerStyle"
                 android:layout_height="40dp"
@@ -198,7 +198,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             >
 
             <TextView
@@ -222,9 +222,53 @@
             >
 
             <Spinner
-                android:id="@+id/asignacionSpinner"
+                android:id="@+id/asignacionCSpinner"
                 android:layout_width="0dp"
                 android:hint="Selecciona Asignación"
+                style="@style/CustomSpinnerStyle"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:paddingLeft="10dp" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="#CCCCCC" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Motivo Cancelacion: "
+
+                android:textSize="22sp"
+
+                android:layout_gravity="center_vertical"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            >
+
+            <Spinner
+                android:id="@+id/MotivoCancelacionSpinner"
+                android:layout_width="0dp"
+                android:hint="Motivo Cancelacion"
                 style="@style/CustomSpinnerStyle"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -241,7 +285,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:gravity="center_horizontal"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton

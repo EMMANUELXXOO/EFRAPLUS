@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static final int DATA_BASEVERSION = 9;
+    private static final int DATA_BASEVERSION = 20;
     private static final String DATABASE_NOMBRE = "FRAPPLUS.db";
 
     public DBHelper(@Nullable Context context) {
@@ -49,6 +49,14 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public static final String TABLE_HospitalReceptor = "HospitalReceptor";
 
+    public static final String TABLE_MaterialMedico = "MaterialMedico";
+
+    public static final String TABLE_MedicamentosConsumos = "MedicamentosConsumos";
+
+    public static final String TABLE_FRAPCANCELADO = "FrapCancelado";
+
+    public static final String TABLE_DatosServicioCancelado = "DatosServicioCancelado";
+    public static final String TABLE_CONTROLCANCELADO = "DatosControlCancelado";
 
     //se crea al momento de mandar la base de datos
     @Override
@@ -276,6 +284,55 @@ public class DBHelper extends SQLiteOpenHelper {
                 "NombreEntregaPaciente TEXT ," +
                 "FirmaRecibePaciente TEXT ," +
                 "NombreRecibePaciente TEXT )");
+        //Material Medico
+        sqLiteDatabase.execSQL("CREATE TABLE "+TABLE_MaterialMedico+"("+
+                "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                "ClaveFRAPOrden TEXT  NOT NULL, " +
+                "MaterialMedico TEXT ," +
+                "CantidadMaterialMedico TEXT )");
+
+        //Medicamentos
+        sqLiteDatabase.execSQL("CREATE TABLE "+TABLE_MedicamentosConsumos+"("+
+                "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                "ClaveFRAPOrden TEXT NOT NULL, " +
+                "HoraCaptura TEXT ," +
+                "Medicamento TEXT ," +
+                "Dosis TEXT ," +
+                "Via TEXT ," +
+                "TE TEXT )");
+        //FRAP CANCELADO
+        sqLiteDatabase.execSQL("CREATE TABLE "+TABLE_FRAPCANCELADO+"("+
+                "ClaveFRAPOrden TEXT PRIMARY KEY NOT NULL, " +
+                "StatusC TEXT ," +
+                "DelegacionC TEXT ," +
+                "AsignacionC TEXT ," +
+                "MotivodeCancelacion TEXT )");
+
+        //TABLA Datos Servicio
+        sqLiteDatabase.execSQL("CREATE TABLE "+TABLE_DatosServicioCancelado+"("+
+                "ClaveFRAPOrden TEXT PRIMARY KEY NOT NULL, " +
+                "Fecha TEXT ," +
+                "Dia TEXT ," +
+                "HoraLlamada TEXT ," +
+                "HoraSalida TEXT," +
+                "HoraLlegada TEXT," +
+                "HoraTraslado TEXT ," +
+                "HoraHospital TEXT ," +
+                "HoraDisponible TEXT ," +
+                "MotivoDeAtencion TEXT ," +
+                "SubMotivo TEXT ," +
+                "CalleServicio TEXT ," +
+                "Calle1 TEXT ," +
+                "Calle2 TEXT ," +
+                "Colonia TEXT," +
+                "DelegacionMunicipio TEXT)");
+
+        //TABLA Datos Control CANCELADO
+        sqLiteDatabase.execSQL("CREATE TABLE "+TABLE_CONTROLCANCELADO+"("+
+                "ClaveFRAPOrden TEXT PRIMARY KEY NOT NULL, " +
+                "NoAmbulancia TEXT," +
+                "Operador TEXT," +
+                "PrestadoresServicio TEXT )");
     }
 
     @Override
@@ -314,6 +371,15 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_DatosLegales);
 
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_HospitalReceptor);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_MaterialMedico);
+
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_MedicamentosConsumos);
+
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_FRAPCANCELADO);
+
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_DatosServicioCancelado);
+
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTROLCANCELADO);
 
         onCreate(sqLiteDatabase);
     }

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.text.InputType;
@@ -145,6 +146,13 @@ public class VerInformeFrap extends AppCompatActivity {
         Intent intent = new Intent(this, MainReporte.class);
         intent.putExtra("id", id);
         startActivity(intent);
+        ///////Para los botones bloqueados
+// Dentro de la actividad donde deseas bloquear el botón
+        SharedPreferences preferences = getSharedPreferences("MisPreferencias", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("botonBloqueado", true); // Establece el estado del botón como bloqueado
+        editor.apply();
+
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
 

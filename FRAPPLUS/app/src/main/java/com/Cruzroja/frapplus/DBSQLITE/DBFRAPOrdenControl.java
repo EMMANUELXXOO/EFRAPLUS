@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 
 import com.Cruzroja.frapplus.entidades.FRAP;
 import com.Cruzroja.frapplus.entidades.FRAPOrden;
+import com.Cruzroja.frapplus.entidades.MaterialMedico;
+import com.Cruzroja.frapplus.entidades.MedicamentosConsumos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +54,7 @@ public class DBFRAPOrdenControl extends DBHelper {
             return ID;
         }
 
-
+//Arreglo para lista mostrar
     public ArrayList<FRAPOrden> verFrapOrden() {
         DBHelper dbHelper = new DBHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -2310,6 +2312,427 @@ public boolean editarDelegacionReporte(String ClaveFRAPOrden, String Estado, Str
                     ", NombreEntregaPaciente = '" + NombreEntregaPaciente + "'" +
                     ", FirmaRecibePaciente = '" + FirmaRecibePaciente + "'" +
                     ", NombreRecibePaciente = '" + NombreRecibePaciente + "'" +
+                    " WHERE ClaveFRAPOrden = '" + ClaveFRAPOrden + "'");
+
+
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+        return correcto;
+    }
+    //////////MaterialMedico
+    //Insertar datos primera vez
+    public long insertarMaterialMedicO(String ClaveFRAPOrden,String MaterialMedico,String CantidadMaterialMedico) {
+        long ID = 0;
+        try {
+
+            //Lllamamos a dbhelper
+            DBHelper dbHelper = new DBHelper(context);
+            //Lllamamos a sqlite
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+            //Agregar la funcion para insertar registro
+            ContentValues values = new ContentValues();
+
+            values.put("ClaveFRAPOrden", ClaveFRAPOrden);
+            values.put("MaterialMedico", MaterialMedico);
+            values.put("CantidadMaterialMedico", CantidadMaterialMedico);
+
+            ID = db.insert(TABLE_MaterialMedico, null, values);
+
+        } catch (Exception e) {
+            Toast.makeText(context, "Error de insercion", Toast.LENGTH_SHORT).show();
+            e.toString();
+        }
+        return ID;
+    }
+
+    //Editar
+    public boolean editarMaterialMedico(String ClaveFRAPOrden,String MaterialMedico,String CantidadMaterialMedico) {
+
+        boolean correcto = false;
+
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        try {
+            //Modifica la tabla
+            db.execSQL("UPDATE " + TABLE_MaterialMedico +
+                    " SET MaterialMedico = '" + MaterialMedico + "'" +
+                    ", CantidadMaterialMedico = '" + CantidadMaterialMedico + "'" +
+                    " WHERE ClaveFRAPOrden = '" + ClaveFRAPOrden + "'");
+
+
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+        return correcto;
+    }
+
+    //Arreglo para lista mostrar
+    public ArrayList<MaterialMedico> verMaterialesConsumo() {
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ArrayList<MaterialMedico> MaterialMedicoC = new ArrayList<>();
+        MaterialMedico MaterialMedico1;
+        Cursor cursorMateriales;
+        cursorMateriales = db.rawQuery("SELECT * FROM " + TABLE_MaterialMedico + " ORDER BY id DESC", null);
+
+        if (cursorMateriales.moveToFirst()) {
+            do {
+                MaterialMedico1 = new MaterialMedico();
+                MaterialMedico1.setId(cursorMateriales.getInt(0));
+                MaterialMedico1.setClaveFRAPOrden(cursorMateriales.getString(1));
+                MaterialMedico1.setMaterial(cursorMateriales.getString(2));
+                MaterialMedico1.setCantidad(cursorMateriales.getString(3));
+                MaterialMedicoC.add(MaterialMedico1);
+            } while (cursorMateriales.moveToNext());
+        }
+        cursorMateriales.close();
+
+        return MaterialMedicoC;
+    }
+
+    //////////Medicamentos Consumos
+    //Insertar datos primera vez
+    public long insertarMedicamentosConsumo(String ClaveFRAPOrden
+            ,String HoraCaptura,String Medicamento,String Dosis,String Via,String TE) {
+        long ID = 0;
+        try {
+
+            //Lllamamos a dbhelper
+            DBHelper dbHelper = new DBHelper(context);
+            //Lllamamos a sqlite
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+            //Agregar la funcion para insertar registro
+            ContentValues values = new ContentValues();
+
+            values.put("ClaveFRAPOrden", ClaveFRAPOrden);
+            values.put("HoraCaptura", HoraCaptura);
+            values.put("Medicamento", Medicamento);
+            values.put("Dosis", Dosis);
+            values.put("Via", Via);
+            values.put("TE", TE);
+            ID = db.insert(TABLE_MedicamentosConsumos, null, values);
+
+        } catch (Exception e) {
+            Toast.makeText(context, "Error de insercion", Toast.LENGTH_SHORT).show();
+            e.toString();
+        }
+        return ID;
+    }
+
+    //Editar
+    public boolean editarMedicamentosConsumo(String ClaveFRAPOrden
+            ,String HoraCaptura,String Medicamento,String Dosis,String Via,String TE) {
+
+        boolean correcto = false;
+
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        try {
+            //Modifica la tabla
+            db.execSQL("UPDATE " + TABLE_MedicamentosConsumos +
+                    " SET HoraCaptura = '" + HoraCaptura + "'" +
+                    ", Medicamento = '" + Medicamento + "'" +
+                    ", Dosis = '" + Dosis + "'" +
+                    ", Via = '" + Via + "'" +
+                    ", TE = '" + TE + "'" +
+                    " WHERE ClaveFRAPOrden = '" + ClaveFRAPOrden + "'");
+
+
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+        return correcto;
+    }
+    //Arreglo para lista mostrar
+    public ArrayList<MedicamentosConsumos> verMedicamentosConsumo() {
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ArrayList<MedicamentosConsumos> MedicamentosConsumos = new ArrayList<>();
+        MedicamentosConsumos medicamentosConsumos1;
+        Cursor cursorMedicamentos;
+        cursorMedicamentos = db.rawQuery("SELECT * FROM " + TABLE_MedicamentosConsumos + " ORDER BY id DESC", null);
+
+        if (cursorMedicamentos.moveToFirst()) {
+            do {
+                medicamentosConsumos1 = new MedicamentosConsumos();
+                medicamentosConsumos1.setId(cursorMedicamentos.getInt(0));
+                medicamentosConsumos1.setClaveFRAPOrden(cursorMedicamentos.getString(1));
+                medicamentosConsumos1.setHoraCaptura(cursorMedicamentos.getString(2));
+                medicamentosConsumos1.setMedicamento(cursorMedicamentos.getString(3));
+                medicamentosConsumos1.setDosis(cursorMedicamentos.getString(4));
+                medicamentosConsumos1.setVia(cursorMedicamentos.getString(5));
+                medicamentosConsumos1.setTE(cursorMedicamentos.getString(6));
+                MedicamentosConsumos.add(medicamentosConsumos1);
+            } while (cursorMedicamentos.moveToNext());
+        }
+        cursorMedicamentos.close();
+
+        return MedicamentosConsumos;
+    }
+
+    //////////FRAP CANCELADO DELEGACION
+    //Insertar datos primera vez
+    public long insertarFrapcanceladoDelegacion(String ClaveFRAPOrden
+            ,String StatusC,String DelegacionC,String AsignacionC,String MotivodeCancelacion) {
+        long ID = 0;
+        try {
+
+            //Lllamamos a dbhelper
+            DBHelper dbHelper = new DBHelper(context);
+            //Lllamamos a sqlite
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+            //Agregar la funcion para insertar registro
+            ContentValues values = new ContentValues();
+
+            values.put("ClaveFRAPOrden", ClaveFRAPOrden);
+            values.put("StatusC", StatusC);
+            values.put("DelegacionC", DelegacionC);
+            values.put("AsignacionC", AsignacionC);
+            values.put("MotivodeCancelacion", MotivodeCancelacion);
+
+            ID = db.insert(TABLE_FRAPCANCELADO, null, values);
+
+        } catch (Exception e) {
+            Toast.makeText(context, "Error de insercion", Toast.LENGTH_SHORT).show();
+            e.toString();
+        }
+        return ID;
+    }
+
+    //Editar
+    public boolean editarFRAPcanceladoDelegacion(String ClaveFRAPOrden
+            ,String StatusC,String DelegacionC,String AsignacionC,String MotivodeCancelacion) {
+
+        boolean correcto = false;
+
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        try {
+            //Modifica la tabla
+            db.execSQL("UPDATE " + TABLE_FRAPCANCELADO +
+                    " SET StatusC = '" + StatusC + "'" +
+                    ", DelegacionC = '" + DelegacionC + "'" +
+                    ", AsignacionC = '" + AsignacionC + "'" +
+                    ", MotivodeCancelacion = '" + MotivodeCancelacion + "'" +
+                    " WHERE ClaveFRAPOrden = '" + ClaveFRAPOrden + "'");
+
+
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+        return correcto;
+    }
+
+    //Servicio(Hoja Principal NO ANEXO
+    //Insertar datos primera vez
+    public long insertaServicio1CANCELADOReporte(String ClaveFRAPOrden, String Fecha
+            , String Dia, String HoraLlamada, String HoraSalida, String HoraLlegada
+            , String HoraTraslado,String HoraHospital
+            ,String HoraDisponible, String MotivoDeAtencion,String SubMotivo) {
+        long ID = 0;
+        try {
+
+            //Lllamamos a dbhelper
+            DBHelper dbHelper = new DBHelper(context);
+            //Lllamamos a sqlite
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+            //Agregar la funcion para insertar registro
+            ContentValues values = new ContentValues();
+
+            values.put("ClaveFRAPOrden", ClaveFRAPOrden);
+            values.put("Fecha", Fecha);
+            values.put("Dia", Dia);
+            values.put("HoraLlamada",HoraLlamada);
+            values.put("HoraSalida", HoraSalida);
+            values.put("HoraLlegada", HoraLlegada);
+            values.put("HoraTraslado",HoraTraslado);
+            values.put("HoraHospital", HoraHospital);
+            values.put("HoraDisponible", HoraDisponible);
+            values.put("MotivoDeAtencion",MotivoDeAtencion);
+            values.put("SubMotivo", SubMotivo);
+
+            ID = db.insert(TABLE_DatosServicioCancelado, null, values);
+
+        } catch (Exception e) {
+            Toast.makeText(context, "Error de insercion", Toast.LENGTH_SHORT).show();
+            e.toString();
+        }
+        return ID;
+    }
+
+    //Editar
+    public boolean editarServicio1CANCELADOReporte(String ClaveFRAPOrden, String Fecha
+            , String Dia, String HoraLlamada, String HoraSalida, String HoraLlegada
+            , String HoraTraslado,String HoraHospital
+            ,String HoraDisponible, String MotivoDeAtencion,String SubMotivo) {
+
+        boolean correcto = false;
+
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        try {
+            //Modifica la tabla
+            db.execSQL("UPDATE " + TABLE_DatosServicioCancelado +
+                    " SET Fecha = '" + Fecha + "'" +
+                    ", Dia = '" + Dia + "'" +
+                    ", HoraLlamada = '" + HoraLlamada + "'" +
+                    ", HoraSalida = '" + HoraSalida + "'" +
+                    ", HoraLlegada = '" + HoraLlegada + "'" +
+                    ", HoraTraslado = '" + HoraTraslado + "'" +
+                    ", HoraHospital = '" + HoraHospital + "'" +
+                    ", HoraDisponible = '" + HoraDisponible + "'" +
+                    ", MotivoDeAtencion = '" + MotivoDeAtencion + "'" +
+                    ", SubMotivo = '" + SubMotivo + "'" +
+                    " WHERE ClaveFRAPOrden = '" + ClaveFRAPOrden + "'");
+
+
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+        return correcto;
+    }
+
+    //Servicio(Hoja Principal ANEXO(2)
+    //Insertar datos primera vez
+    public long insertaServicio2CANCELADOReporte(String ClaveFRAPOrden, String CalleServicio
+            , String Calle1, String Calle2, String Colonia, String DelegacionMunicipio
+            ) {
+        long ID = 0;
+        try {
+
+            //Lllamamos a dbhelper
+            DBHelper dbHelper = new DBHelper(context);
+            //Lllamamos a sqlite
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+            //Agregar la funcion para insertar registro
+            ContentValues values = new ContentValues();
+
+            values.put("ClaveFRAPOrden", ClaveFRAPOrden);
+            values.put("CalleServicio", CalleServicio);
+            values.put("Calle1", Calle1);
+            values.put("Calle2",Calle2);
+            values.put("Colonia", Colonia);
+            values.put("DelegacionMunicipio", DelegacionMunicipio);
+
+
+            ID = db.insert(TABLE_DatosServicioCancelado, null, values);
+
+        } catch (Exception e) {
+            Toast.makeText(context, "Error de insercion", Toast.LENGTH_SHORT).show();
+            e.toString();
+        }
+        return ID;
+    }
+
+    //Editar
+    public boolean editarServicio2CANCELADOReporte(String ClaveFRAPOrden, String CalleServicio
+            , String Calle1, String Calle2, String Colonia, String DelegacionMunicipio
+            ) {
+
+        boolean correcto = false;
+
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        try {
+            //Modifica la tabla
+            db.execSQL("UPDATE " + TABLE_DatosServicioCancelado +
+                    " SET CalleServicio = '" + CalleServicio + "'" +
+                    ", Calle1 = '" + Calle1 + "'" +
+                    ", Calle2 = '" + Calle2 + "'" +
+                    ", Colonia = '" + Colonia + "'" +
+                    ", DelegacionMunicipio = '" + DelegacionMunicipio + "'" +
+                    " WHERE ClaveFRAPOrden = '" + ClaveFRAPOrden + "'");
+
+
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+        return correcto;
+    }
+
+    //Control(Hoja Principal
+    //Insertar datos primera vez
+    public long insertaControlCANCELADO(String ClaveFRAPOrden, String NoAmbulancia
+            , String Operador, String PrestadoresServicio) {
+        long ID = 0;
+        try {
+
+            //Lllamamos a dbhelper
+            DBHelper dbHelper = new DBHelper(context);
+            //Lllamamos a sqlite
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+            //Agregar la funcion para insertar registro
+            ContentValues values = new ContentValues();
+
+            values.put("ClaveFRAPOrden", ClaveFRAPOrden);
+            values.put("NoAmbulancia", NoAmbulancia);
+            values.put("Operador", Operador);
+            values.put("PrestadoresServicio",PrestadoresServicio);
+
+
+
+            ID = db.insert(TABLE_CONTROLCANCELADO, null, values);
+
+        } catch (Exception e) {
+            Toast.makeText(context, "Error de insercion", Toast.LENGTH_SHORT).show();
+            e.toString();
+        }
+        return ID;
+    }
+
+    //Editar
+    public boolean editarControlReporte(String ClaveFRAPOrden, String NoAmbulancia
+            , String Operador, String PrestadoresServicio) {
+
+        boolean correcto = false;
+
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        try {
+            //Modifica la tabla
+            db.execSQL("UPDATE " + TABLE_CONTROLCANCELADO +
+                    " SET NoAmbulancia = '" + NoAmbulancia + "'" +
+                    ", Operador = '" + Operador + "'" +
+                    ", PrestadoresServicio = '" + PrestadoresServicio + "'" +
                     " WHERE ClaveFRAPOrden = '" + ClaveFRAPOrden + "'");
 
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
@@ -29,7 +30,7 @@ public class DelegacionReporte extends AppCompatActivity {
     FRAPOrden frapOrden;
     int id;
     boolean correcto = false;
-    public int Bandera=0;
+    public int Bandera1=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +79,6 @@ public class DelegacionReporte extends AppCompatActivity {
             Toast.makeText(this, "ERROR", Toast.LENGTH_SHORT).show();
         }
 
-
         // Datos para los spinners
         String[] estados = {"Baja California"};
         String[] delegaciones = {"Tijuana"};
@@ -99,7 +99,6 @@ public class DelegacionReporte extends AppCompatActivity {
                 "PF Revolucion",
                 "PF Ojo de Agua",
                 "PF Libertad"};
-
 
         // Adaptadores para los spinners
         ArrayAdapter<String> estadoAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, estados);
@@ -124,11 +123,20 @@ public class DelegacionReporte extends AppCompatActivity {
 
             DBFRAPOrdenControl dbfrapOrden1 = new DBFRAPOrdenControl(DelegacionReporte.this);
             long ID = dbfrapOrden1.insertaDelegacionReporte(claveGenerada, selectedEstado, selectedDelegacion, selectedAsignacion);
-
             if (ID > 0) {
                 Toast.makeText(DelegacionReporte.this, "Dato Guardado", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(DelegacionReporte.this, MainReporte.class);
                 intent.putExtra("id", id);
+                SharedPreferences preferences = getSharedPreferences("MisPreferencias", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("botonBloqueado", false);
+                editor.apply();
+
+                //////
+                SharedPreferences preferences1 = getSharedPreferences("MisPreferencias1", MODE_PRIVATE);
+                SharedPreferences.Editor editor1 = preferences1.edit();
+                editor1.putBoolean("botonBloqueado1", true);
+                editor1.apply();
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                 finish();
@@ -138,9 +146,21 @@ public class DelegacionReporte extends AppCompatActivity {
             } else {
                 correcto = dbfrapOrden1.editarDelegacionReporte(claveGenerada, selectedEstado, selectedDelegacion, selectedAsignacion);
                 if (correcto) {
-
                     Intent intent = new Intent(DelegacionReporte.this, MainReporte.class);
                     intent.putExtra("id", id);
+                    ///////Para los botones bloqueados
+// Dentro de la actividad donde deseas bloquear el botón
+                    SharedPreferences preferences = getSharedPreferences("MisPreferencias", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putBoolean("botonBloqueado", false);
+                    editor.apply();
+
+                    //////
+                    SharedPreferences preferences1 = getSharedPreferences("MisPreferencias1", MODE_PRIVATE);
+                    SharedPreferences.Editor editor1 = preferences1.edit();
+                    editor1.putBoolean("botonBloqueado1", true);
+                    editor1.apply();
+
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                     finish();
@@ -152,20 +172,15 @@ public class DelegacionReporte extends AppCompatActivity {
                 //Toast.makeText(DelegacionReporte.this, "Datos Modificados", Toast.LENGTH_SHORT).show();
             }
         }
-
         });
-
         btnregresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Obtén una instancia del Vibrator
-
-
                 Intent intent = new Intent(DelegacionReporte.this, MainReporte.class);
                 intent.putExtra("id", id);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
-
             }
         });
     }

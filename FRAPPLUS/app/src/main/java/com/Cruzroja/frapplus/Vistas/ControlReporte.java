@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
@@ -44,6 +45,8 @@ public class ControlReporte extends AppCompatActivity {
         EditText editTextOperador = findViewById(R.id.editTextOperador);
         EditText editTextPrestadoresServicio = findViewById(R.id.editTextPrestadoresServicio);
         EditText editTextMatriculaH = findViewById(R.id.editTextMatriculaH);
+
+
 
 
 
@@ -178,6 +181,29 @@ public class ControlReporte extends AppCompatActivity {
                         Toast.makeText(ControlReporte.this, "Dato Guardado", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(ControlReporte.this, MainReporte.class);
                         intent.putExtra("id", id);
+                        ///////Para los botones bloqueados
+// Dentro de la actividad donde deseas bloquear el botón
+                        SharedPreferences preferences = getSharedPreferences("MisPreferencias", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putBoolean("botonBloqueado", false);
+                        editor.apply();
+
+                        //////
+                        SharedPreferences preferences1 = getSharedPreferences("MisPreferencias1", MODE_PRIVATE);
+                        SharedPreferences.Editor editor1 = preferences1.edit();
+                        editor1.putBoolean("botonBloqueado1", false);
+                        editor1.apply();
+
+                        SharedPreferences preferences2 = getSharedPreferences("MisPreferencias2", MODE_PRIVATE);
+                        SharedPreferences.Editor editor2 = preferences2.edit();
+                        editor2.putBoolean("botonBloqueado2", false);
+                        editor2.apply();
+
+                        SharedPreferences preferences3 = getSharedPreferences("MisPreferencias3", MODE_PRIVATE);
+                        SharedPreferences.Editor editor3 = preferences3.edit();
+                        editor3.putBoolean("botonBloqueado3", true);
+                        editor3.apply();
+
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                         finish();
@@ -189,6 +215,30 @@ public class ControlReporte extends AppCompatActivity {
                         if (correcto) {
                             Intent intent = new Intent(ControlReporte.this, MainReporte.class);
                             intent.putExtra("id", id);
+
+                            ///////Para los botones bloqueados
+// Dentro de la actividad donde deseas bloquear el botón
+                            SharedPreferences preferences = getSharedPreferences("MisPreferencias", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            editor.putBoolean("botonBloqueado", false);
+                            editor.apply();
+
+                            //////
+                            SharedPreferences preferences1 = getSharedPreferences("MisPreferencias1", MODE_PRIVATE);
+                            SharedPreferences.Editor editor1 = preferences1.edit();
+                            editor1.putBoolean("botonBloqueado1", false);
+                            editor1.apply();
+
+                            SharedPreferences preferences2 = getSharedPreferences("MisPreferencias2", MODE_PRIVATE);
+                            SharedPreferences.Editor editor2 = preferences2.edit();
+                            editor2.putBoolean("botonBloqueado2", false);
+                            editor2.apply();
+
+                            SharedPreferences preferences3 = getSharedPreferences("MisPreferencias3", MODE_PRIVATE);
+                            SharedPreferences.Editor editor3 = preferences3.edit();
+                            editor3.putBoolean("botonBloqueado3", true);
+                            editor3.apply();
+
                             startActivity(intent);
                             overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                             finish();

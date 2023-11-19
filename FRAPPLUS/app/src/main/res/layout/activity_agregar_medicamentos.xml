@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Vistas.AgregarMedicamentos">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+
+            android:id="@+id/linearLayout"
+            tools:ignore="MissingConstraints">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+
+                android:background="#CCCCCC"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+
+                tools:ignore="MissingConstraints" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Estado Del Reporte: "
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/viewestado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Clave del Reporte:  "
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/viewclave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha de Modificacion: "
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/viewFechamodif"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_height="4dp"
+            android:background="#CCCCCC" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Captura De Medicamentos "
+                android:textStyle="bold"
+                android:textSize="22sp"
+
+                />
+
+
+        </LinearLayout>
+
+
+        <!-- Nombre Afiliacion-->
+
+
+        <!-- Sexo y edad-->
+
+
+
+        <!-- Domicilio-->
+
+
+
+        <!-- Colonia-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            tools:ignore="MissingConstraints">
+
+            <!-- Primer LinearLayout -->
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hr/Captura"
+                    android:textSize="14sp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    >
+                    <ImageButton
+                        android:id="@+id/btnHrCaptura"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimary"
+                        android:src="@drawable/ic_clock"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/viewHoraCaptura"
+                        android:gravity="center"
+                        style="@style/CustomSpinnerStyle">
+
+                        <EditText
+                            android:id="@+id/editTextHoraCaptura"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!-- Segundo LinearLayout (al lado del primero) -->
+
+        </LinearLayout>
+
+        <!-- Medicamento  Lista desplegable-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medicamento: "
+
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            >
+            <Spinner
+                android:id="@+id/SpinnerMedicamento"
+                android:layout_width="0dp"
+                style="@style/CustomSpinnerStyle"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:paddingLeft="10dp" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#CCCCCC" />
+        <!-- Telefono-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            tools:ignore="MissingConstraints">
+
+
+
+            <!-- Segundo LinearLayout (al lado del primero) -->
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                >
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    tools:ignore="MissingConstraints">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dosis"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/editTextDosis"
+                            style="@style/CustomSpinnerStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:hint="Ingresa Datos" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <!-- Ocupacion Spiner-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Via: "
+
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            >
+            <Spinner
+                android:id="@+id/SpinnerVia"
+                android:layout_width="0dp"
+                style="@style/CustomSpinnerStyle"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:paddingLeft="10dp" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#CCCCCC" />
+        <!-- Derecho Ambiente-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T.E: "
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            >
+            <Spinner
+                android:id="@+id/SpinnerTE"
+                android:layout_width="0dp"
+                style="@style/CustomSpinnerStyle"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:paddingLeft="10dp" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#CCCCCC" />
+
+
+
+        <!-- Botones guardar y atras-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabRegresar"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:backgroundTint="#FB20B5B2"
+                android:src="@drawable/baseline_arrow_back_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:layout_gravity="center"
+
+                android:layout_marginLeft="110dp"
+                android:clickable="true"
+                android:backgroundTint="#FB20B5B2"
+                android:src="@drawable/baseline_save_24" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="#CCCCCC" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

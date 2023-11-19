@@ -5,5 +5,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Vistas.ConsumosResumenMateriales">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <SearchView
+            android:id="@+id/txtBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#FB20B5B2" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="#CCCCCC"
+            android:layout_below="@id/txtBuscar"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/OrdenMateriales"
+            android:layout_width="match_parent"
+            android:layout_height="770dp"
+            android:layout_below="@id/txtBuscar"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            >
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+
+
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/home"
+                app:backgroundTint="#FB20B5B2" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="#CCCCCC"
+            android:layout_below="@id/Orden"/>
+
+        <!-- BottomNavigationView -->
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
