@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static final int DATA_BASEVERSION = 20;
+    private static final int DATA_BASEVERSION = 22;
     private static final String DATABASE_NOMBRE = "FRAPPLUS.db";
 
     public DBHelper(@Nullable Context context) {
@@ -57,6 +57,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public static final String TABLE_DatosServicioCancelado = "DatosServicioCancelado";
     public static final String TABLE_CONTROLCANCELADO = "DatosControlCancelado";
+    public static final String TABLE_SERVIDORES = "DatosSERVIDORES";
 
     //se crea al momento de mandar la base de datos
     @Override
@@ -333,7 +334,17 @@ public class DBHelper extends SQLiteOpenHelper {
                 "NoAmbulancia TEXT," +
                 "Operador TEXT," +
                 "PrestadoresServicio TEXT )");
+        //TABLA Datos Servidores
+        sqLiteDatabase.execSQL("CREATE TABLE "+TABLE_SERVIDORES+"("+
+                "IDSERVIDOR INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                "URLSERVIDOR TEXT," +
+                "USUARIO TEXT," +
+                "PASSWORD TEXT )");
+
+
     }
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
@@ -380,6 +391,8 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_DatosServicioCancelado);
 
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTROLCANCELADO);
+
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_SERVIDORES);
 
         onCreate(sqLiteDatabase);
     }

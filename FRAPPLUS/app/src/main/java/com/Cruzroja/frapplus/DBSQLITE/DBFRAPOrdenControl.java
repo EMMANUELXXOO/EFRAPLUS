@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.Cruzroja.frapplus.entidades.DatosSERVIDORES;
 import com.Cruzroja.frapplus.entidades.FRAP;
 import com.Cruzroja.frapplus.entidades.FRAPOrden;
 import com.Cruzroja.frapplus.entidades.MaterialMedico;
@@ -2744,5 +2745,86 @@ public boolean editarDelegacionReporte(String ClaveFRAPOrden, String Estado, Str
             db.close();
         }
         return correcto;
+    }
+    //SERVIDOR(Hoja Principal
+    //Insertar datos primera vez
+    public long insertarServidor(String URLSERVIDOR
+            , String USUARIO, String PASSWORD) {
+        long ID = 0;
+        try {
+
+            //Lllamamos a dbhelper
+            DBHelper dbHelper = new DBHelper(context);
+            //Lllamamos a sqlite
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+            //Agregar la funcion para insertar registro
+            ContentValues values = new ContentValues();
+
+
+            values.put("URLSERVIDOR", URLSERVIDOR);
+            values.put("USUARIO", USUARIO);
+            values.put("PASSWORD",PASSWORD);
+
+
+
+            ID = db.insert(TABLE_SERVIDORES, null, values);
+
+        } catch (Exception e) {
+            Toast.makeText(context, "Error de insercion", Toast.LENGTH_SHORT).show();
+            e.toString();
+        }
+        return ID;
+    }
+
+    //Editar
+    public boolean editarServidor(String URLSERVIDOR
+            , String USUARIO, String PASSWORD) {
+
+        boolean correcto = false;
+
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        try {
+            //Modifica la tabla
+            db.execSQL("UPDATE " + TABLE_SERVIDORES +
+                    " SET USUARIO = '" + USUARIO + "'" +
+                    ", PASSWORD = '" + PASSWORD + "'" +
+                    " WHERE URLSERVIDOR = '" + URLSERVIDOR + "'");
+
+
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+        return correcto;
+    }
+    //Arreglo para lista mostrar
+    public ArrayList<DatosSERVIDORES> verServidores() {
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ArrayList<DatosSERVIDORES> DatosSERVIDORES = new ArrayList<>();
+        DatosSERVIDORES DatosSERVIDORES1;
+        Cursor cursorServidores;
+        cursorServidores = db.rawQuery("SELECT * FROM " + TABLE_SERVIDORES + " ORDER BY IDSERVIDOR DESC", null);
+
+        if (cursorServidores.moveToFirst()) {
+            do {
+                DatosSERVIDORES1 = new DatosSERVIDORES();
+                DatosSERVIDORES1.setIDSERVIDOR(cursorServidores.getInt(0));
+                DatosSERVIDORES1.setURLSERVIDOR(cursorServidores.getString(1));
+                DatosSERVIDORES1.setUSUARIO(cursorServidores.getString(2));
+                DatosSERVIDORES1.setPASSWORD(cursorServidores.getString(3));
+                DatosSERVIDORES.add(DatosSERVIDORES1);
+            } while (cursorServidores.moveToNext());
+        }
+        cursorServidores.close();
+
+        return DatosSERVIDORES;
     }
 }

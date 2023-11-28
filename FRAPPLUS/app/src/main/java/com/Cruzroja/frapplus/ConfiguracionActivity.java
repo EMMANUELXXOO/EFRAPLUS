@@ -7,19 +7,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.Cruzroja.frapplus.Vistas.InicioFrap;
+
 public class ConfiguracionActivity extends AppCompatActivity {
 
+    Button btnAgregarImpresora;
+    Button btnVerImpresora;
+
+    Button btnAgregarServidor;
+    Button btnVerServidor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
 
-    Button btnAgregarImpresora = findViewById(R.id.btnAgregarImpresora);
-    Button btnVerImpresora = findViewById(R.id.btnVerImpresora);
-    Button btnAgregarServidor = findViewById(R.id.btnAgregarServidor);
-    Button btnVerServidor = findViewById(R.id.btnVerServidores);
+
+
+
+        btnVerServidor= findViewById(R.id.btnVerServidores);
+
 
         btnAgregarImpresora.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
                 // Código para cambiar de actividad
@@ -58,8 +68,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
 
 
     }
-    public void clickRegresar(View view) {
-        Intent intent = new Intent(this, ActivityInicio.class);
-        startActivity(intent);
-    }
+
+
+
 }

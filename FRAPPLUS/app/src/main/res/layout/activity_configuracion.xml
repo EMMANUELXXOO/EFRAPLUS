@@ -11,7 +11,6 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-               android:background="#B6B3B3"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp">
@@ -20,62 +19,78 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            android:textSize="20dp"
-            android:text="IMPRESORA REMOTAS"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="16dp"
+            android:text="CONFIGURACION SERVIDORES"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btnAgregarImpresora"
+            android:id="@+id/btnservidor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
-            android:layout_marginBottom="16dp"
-            android:text="Agregar Impresora" />
 
-        <Button
-            android:id="@+id/btnVerImpresora"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ver Impresoras" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="90sp"
-            android:textSize="20dp"
-            android:text="SERVIDORES REMOTOS"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
-
-        <Button
-            android:layout_marginTop="20sp"
-            android:id="@+id/btnAgregarServidor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Agregar Servidor" />
+            android:text="Configuracion SERVIDOR " />
 
         <Button
             android:id="@+id/btnVerServidores"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ver Servidores" />
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="16dp"
+            android:text="Ver SERVIDORES" />
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50sp"
+            android:textSize="20dp"
+            android:text="SINCRONIZAR FRAP"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnSubirArchivos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="16dp"
+            android:text="Subir Archivos FRAP" />
+
+
+
 
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnRegresar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:onClick="clickRegresar"
-        android:text="Regresar"
-        android:translationX="20dp"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+
+        <!-- Contenido principal -->
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <!-- BottomNavigationView -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:menu="@menu/bottom_navigation_config" />
+    </LinearLayout>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
