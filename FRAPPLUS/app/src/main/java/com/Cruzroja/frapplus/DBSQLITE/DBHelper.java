@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static final int DATA_BASEVERSION = 22;
+    private static final int DATA_BASEVERSION = 23;
     private static final String DATABASE_NOMBRE = "FRAPPLUS.db";
 
     public DBHelper(@Nullable Context context) {
@@ -336,7 +336,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "PrestadoresServicio TEXT )");
         //TABLA Datos Servidores
         sqLiteDatabase.execSQL("CREATE TABLE "+TABLE_SERVIDORES+"("+
-                "IDSERVIDOR INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
                 "URLSERVIDOR TEXT," +
                 "USUARIO TEXT," +
                 "PASSWORD TEXT )");

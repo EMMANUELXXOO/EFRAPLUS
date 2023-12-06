@@ -2811,12 +2811,12 @@ public boolean editarDelegacionReporte(String ClaveFRAPOrden, String Estado, Str
         ArrayList<DatosSERVIDORES> DatosSERVIDORES = new ArrayList<>();
         DatosSERVIDORES DatosSERVIDORES1;
         Cursor cursorServidores;
-        cursorServidores = db.rawQuery("SELECT * FROM " + TABLE_SERVIDORES + " ORDER BY IDSERVIDOR DESC", null);
+        cursorServidores = db.rawQuery("SELECT * FROM " + TABLE_SERVIDORES + " ORDER BY id DESC", null);
 
         if (cursorServidores.moveToFirst()) {
             do {
                 DatosSERVIDORES1 = new DatosSERVIDORES();
-                DatosSERVIDORES1.setIDSERVIDOR(cursorServidores.getInt(0));
+                DatosSERVIDORES1.setId(cursorServidores.getInt(0));
                 DatosSERVIDORES1.setURLSERVIDOR(cursorServidores.getString(1));
                 DatosSERVIDORES1.setUSUARIO(cursorServidores.getString(2));
                 DatosSERVIDORES1.setPASSWORD(cursorServidores.getString(3));
@@ -2826,5 +2826,30 @@ public boolean editarDelegacionReporte(String ClaveFRAPOrden, String Estado, Str
         cursorServidores.close();
 
         return DatosSERVIDORES;
+    }
+
+    public DatosSERVIDORES verServidores(int id) {
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        DatosSERVIDORES DatosSERVIDORES1 = null;
+        Cursor cursorServidores;
+
+
+        cursorServidores = db.rawQuery("SELECT * FROM " + TABLE_SERVIDORES + " WHERE id = " + id + " LIMIT 1", null);
+
+        if (cursorServidores.moveToFirst()) {
+            DatosSERVIDORES1 = new DatosSERVIDORES();
+            DatosSERVIDORES1.setId(cursorServidores.getInt(0));
+            DatosSERVIDORES1.setURLSERVIDOR(cursorServidores.getString(1));
+            DatosSERVIDORES1.setUSUARIO(cursorServidores.getString(2));
+            DatosSERVIDORES1.setPASSWORD(cursorServidores.getString(3));
+
+        }
+
+        cursorServidores.close();
+
+
+        return DatosSERVIDORES1;
     }
 }

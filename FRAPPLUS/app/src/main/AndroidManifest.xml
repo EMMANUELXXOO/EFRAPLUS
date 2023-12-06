@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".VerInformeServidor"
+            android:exported="false" />
+        <activity
             android:name=".itemlistaservidores"
             android:exported="false" />
         <activity

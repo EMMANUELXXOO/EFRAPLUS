@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.Cruzroja.frapplus.R;
+import com.Cruzroja.frapplus.VerInformeServidor;
 import com.Cruzroja.frapplus.Vistas.VerInformeFrap;
 import com.Cruzroja.frapplus.entidades.DatosSERVIDORES;
 import com.Cruzroja.frapplus.entidades.MaterialMedico;
@@ -47,7 +48,7 @@ public class listaservidores extends RecyclerView.Adapter<listaservidores.frapSe
     @Override
     public void onBindViewHolder(@NonNull listaservidores.frapServidoresHolder holder, int position) {
 
-        String id = String.valueOf(listaservidores.get(position).getIDSERVIDOR()); // Convertir a cadena si es necesario
+        String id = String.valueOf(listaservidores.get(position).getId()); // Convertir a cadena si es necesario
         holder.viewID.setText(id);
 
         String Servidor = String.valueOf(listaservidores.get(position).getURLSERVIDOR()); // Convertir a cadena si es necesario
@@ -99,8 +100,8 @@ public class listaservidores extends RecyclerView.Adapter<listaservidores.frapSe
 
                     // Trae el contexto
                     Context context = view.getContext();
-                    Intent intent = new Intent(context, VerInformeFrap.class);
-
+                    Intent intent = new Intent(context, VerInformeServidor.class);
+                    intent.putExtra("id", listaservidores.get(getAdapterPosition()).getId());
                     // Inicia la nueva actividad y aplica la transición personalizada
                     context.startActivity(intent);
                     if (context instanceof Activity) {

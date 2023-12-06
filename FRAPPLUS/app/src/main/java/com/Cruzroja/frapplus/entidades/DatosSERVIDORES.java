@@ -2,18 +2,12 @@ package com.Cruzroja.frapplus.entidades;
 
 public class DatosSERVIDORES {
 
-    private int IDSERVIDOR;
+    private int id;
     private String URLSERVIDOR;
     private String USUARIO;
     private String PASSWORD;
 
-    public int getIDSERVIDOR() {
-        return IDSERVIDOR;
-    }
 
-    public void setIDSERVIDOR(int IDSERVIDOR) {
-        this.IDSERVIDOR = IDSERVIDOR;
-    }
 
     public String getURLSERVIDOR() {
         return URLSERVIDOR;
@@ -37,5 +31,13 @@ public class DatosSERVIDORES {
 
     public void setPASSWORD(String PASSWORD) {
         this.PASSWORD = PASSWORD;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
